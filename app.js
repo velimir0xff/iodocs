@@ -507,13 +507,35 @@ function processRequest(req, res, next) {
 
         // Add API Key to params, if any.
         if (apiKey != '' && apiKey != 'undefined' && apiKey != undefined) {
-            if (options.path.indexOf('?') !== -1) {
-                options.path += '&';
+            if (config.debug) {
+                console.log('Using API Key: ' + apiKey);
+            }
+            if (apiConfig.keyMethod == 'basicAuth') {
+                // if keyMethod is basic auth, check the keyParam to understand how to fill it out
+                if (apiConfig.keyParam == 'user') {
+                    // use the api key as the "user" field of basic auth
+                    credentials = apiKey + ':';
+                }
+                else if (apiConfig.keyParam == 'password') {
+                    // use the api key as the "password" field of basic auth
+                    credentials = ':' + apiKey;
+                }
+                else {
+                    // assume the api key is both user and password. Hopefully the key has a ":" in it.
+                    credentials = apiKey
+                }
+                options.headers['Authorization']='Basic ' + new Buffer(credentials).toString('base64');
             }
             else {
-                options.path += '?';
+                // Assume that the keyType is "queryParam"
+                if (options.path.indexOf('?') !== -1) {
+                    options.path += '&';
+                }
+                else {
+                    options.path += '?';
+                }
+                options.path += apiConfig.keyParam + '=' + apiKey;
             }
-            options.path += apiConfig.keyParam + '=' + apiKey;
         }
 
         // Perform signature routine, if any.
