@@ -1,4 +1,11 @@
-h1=apiInfo.name 
+h1= apiInfo.name 
+
+div(id='top-description')
+    - var descriptions = apiInfo.Description.split("\n")
+    each descr in descriptions
+        p= descr
+
+
 - if (session.authed && apiInfo.oauth && apiInfo.oauth.type =='three-legged')
     - var authed ='authed'
 - else

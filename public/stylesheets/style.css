@@ -309,6 +309,15 @@ li {
   margin-left: 0;
 }
 
+div#top-description p {
+    font-size: 1em;
+    line-height: 1.25em;
+    margin: 0;
+    text-align: justify;
+    text-indent: 1em;
+    margin-bottom: 0.25em;
+}
+
 .credentials {
   background-color: #f4f4e1;
   border: 1px solid #cbcb71;
