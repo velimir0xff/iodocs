@@ -13,5 +13,10 @@
                 "port" : 6379,
                 "password" : "",
                 "database" : "0"
-             }
+             },
+    "https" : {
+        "on": false,
+        "keyPath": "/Path/to/my.hostname.key.pem",
+        "certPath": "/Path/to/my.hostname.crt.pem" 
+    }
 }
