@@ -390,6 +390,9 @@ function processRequest(req, res, next) {
             rejectUnauthorized: false
         };
 
+    // set requestHeaders to pass back for display
+    req.requestHeaders = options.headers;
+
     if (apiConfig.oauth) {
         console.log('Using OAuth');
 
@@ -560,10 +563,14 @@ function processRequest(req, res, next) {
                     // assume the api key is both user and password. Hopefully the key has a ":" in it.
                     credentials = apiKey
                 }
-                options.headers['Authorization']='Basic ' + new Buffer(credentials).toString('base64');
+                options.headers['Authorization'] = 'Basic ' + new Buffer(credentials).toString('base64');
+            }
+            else if (apiConfig.keyMethod == "requestHeader") {
+                // if keyMethod is request header, check the keyParam for what the header should be
+                options.headers[apiConfig.keyParam] = apiKey
             }
             else {
-                // Assume that the keyType is "queryParam"
+                // Assume that the keyType is "queryParam" and pass apiKey as a query parameter.
                 if (options.path.indexOf('?') !== -1) {
                     options.path += '&';
                 }
@@ -605,8 +612,12 @@ function processRequest(req, res, next) {
                     headers[reqQuery.headerNames[x]] = reqQuery.headerValues[x];
                 }
             }
-
-            options.headers = headers;
+            if (options.headers) {
+                options.headers += headers;
+            } 
+            else {
+               options.headers = headers;
+            }
         }
 
         if(options.headers === void 0){
@@ -638,12 +649,15 @@ function processRequest(req, res, next) {
             console.log('Protocol: HTTP');
             doRequest = http.request;
         }
-	if(contentType !== ''){
+        if(contentType !== ''){
             if (config.debug) {
-		console.log('Setting Content-Type: ' + contentType);
+                console.log('Setting Content-Type: ' + contentType);
             }
-	    options.headers['Content-Type'] = contentType;
-	}
+            options.headers['Content-Type'] = contentType;
+        }
+
+        // update requestHeaders to pass back for display
+        req.requestHeaders = options.headers;
 
         // API Call. response is the response from the API, res is the response we will send back to the user.
         var apiCall = doRequest(options, function(response) {
@@ -682,7 +696,7 @@ function processRequest(req, res, next) {
                 req.resultHeaders = response.headers;
                 req.call = url.parse(options.host + options.path);
                 req.call = url.format(req.call);
-		req.statusCode = response.statusCode;
+                req.statusCode = response.statusCode;
 
                 // Response body
                 req.result = body;
@@ -1017,7 +1031,8 @@ app.get('/search', function(req, res) {
 // Process the API request
 app.post('/processReq', oauth, processRequest, function(req, res) {
     var result = {
-        headers: req.resultHeaders,
+        request_headers: req.requestHeaders,
+        response_headers: req.resultHeaders,
         response: req.result,
         call: req.call,
         code: req.res.statusCode

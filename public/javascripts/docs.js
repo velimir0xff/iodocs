@@ -211,13 +211,17 @@
             resultContainer.append($(document.createElement('h4')).text('Call'));
             resultContainer.append($(document.createElement('pre')).addClass('call'));
 
-            // Code
+            // Request Headers
+            resultContainer.append($(document.createElement('h4')).text('Request Headers'));
+            resultContainer.append($(document.createElement('pre')).addClass('request-headers prettyprint'));
+
+            // Response Code
             resultContainer.append($(document.createElement('h4')).text('Response Code'));
             resultContainer.append($(document.createElement('pre')).addClass('code prettyprint'));
 
-            // Header
+            // Response Headers
             resultContainer.append($(document.createElement('h4')).text('Response Headers'));
-            resultContainer.append($(document.createElement('pre')).addClass('headers prettyprint'));
+            resultContainer.append($(document.createElement('pre')).addClass('response-headers prettyprint'));
 
             // Response
             resultContainer.append($(document.createElement('h4'))
@@ -245,9 +249,9 @@
                 window.open(result.signin,"_blank","height=900,width=800,menubar=0,resizable=1,scrollbars=1,status=0,titlebar=0,toolbar=0");
             } else {
                 var response,
-                    responseContentType = result.headers['content-type'];
+                    responseContentType = result.response_headers['content-type'];
                 // Format output according to content-type
-                response = livedocs.formatData(result.response, result.headers['content-type'])
+                response = livedocs.formatData(result.response, result.response_headers['content-type'])
 
                 $('pre.response', resultContainer)
                     .toggleClass('error', false)
@@ -264,14 +268,19 @@
                     .text(response.call);
             }
 
+            if (response.request_headers) {
+                $('pre.request-headers', resultContainer)
+                    .text(formatJSON(response.request_headers));
+            }
+
             if (response.code) {
                 $('pre.code', resultContainer)
                     .text(response.code);
             }
 
-            if (response.headers) {
-                $('pre.headers', resultContainer)
-                    .text(formatJSON(response.headers));
+            if (response.response_headers) {
+                $('pre.response-headers', resultContainer)
+                    .text(formatJSON(response.response_headers));
             }
 
             // Syntax highlighting
@@ -282,11 +291,11 @@
 
             if (err.responseText !== '') {
                 var result = JSON.parse(err.responseText),
-                    headers = formatJSON(result.headers);
+                    headers = formatJSON(result.response_headers);
 
-                if (result.headers && result.headers['content-type']) {
+                if (result.headers && result.response_headers['content-type']) {
                     // Format the result.response and assign it to response
-                    response = livedocs.formatData(result.response, result.headers['content-type']);
+                    response = livedocs.formatData(result.response, result.response_headers['content-type']);
                 } else {
                     response = result.response;
                 }
