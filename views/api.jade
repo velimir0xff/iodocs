@@ -2,11 +2,11 @@ include mixins/content_parameters
 
 h1= apiInfo.name
 
-div(id='top-description')
-    - if (apiInfo.description)
+- if (apiInfo.description)
+    div.description
         - var descriptions = apiInfo.description.split("\n")
         - each descr in descriptions
-            p= descr
+            p=descr
 
 - if (session.authed && apiInfo.oauth && apiInfo.oauth.type =='three-legged')
     - var authed ='authed'
@@ -72,8 +72,13 @@ ul
                         a(href='#') List Methods
                     li.expand-methods
                         a(href='#') Expand Methods
+            - if (endpoint.description)
+                div.description
+                    - var descriptions = endpoint.description.split("\n")
+                    - each descr in descriptions
+                        p=descr
             - if (endpoint.methods.length)
-            ul.methods.hidden
+            ul.methods
                 - each method in endpoint.methods
                     - var httpmethod =method.HTTPMethod.toLowerCase()
                     - if (method.RequiresOAuth ==='Y' || method.RequiresOAuth ===true)

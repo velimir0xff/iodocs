@@ -343,13 +343,17 @@ li {
     margin-left: 0;
 }
 
-div#top-description p {
-    font-size: 1em;
-    line-height: 1.25em;
-    margin: 0;
-    text-align: justify;
-    text-indent: 1em;
-    margin-bottom: 0.25em;
+div.description {
+  padding: 0;
+  margin: 6px 0px 8px 15px;
+}
+div.description p {
+  font-size: 1.1em;
+  line-height: 1.25em;
+  text-align: justify;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 0.25em;
 }
 
 .credentials {
@@ -610,7 +614,11 @@ div#top-description p {
     td {
         &.description {
             font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-            font-size: 12px;
+            font-size: 13px;
+        }
+
+        &.description p {
+          font-size: inherit;
         }
 
         &.type  {

@@ -369,13 +369,17 @@ li {
   margin-left: 0;
 }
 
-div#top-description p {
-    font-size: 1em;
-    line-height: 1.25em;
-    margin: 0;
-    text-align: justify;
-    text-indent: 1em;
-    margin-bottom: 0.25em;
+div.description {
+  padding: 0;
+  margin: 6px 0px 8px 15px;
+}
+div.description p {
+  font-size: 1.1em;
+  line-height: 1.25em;
+  text-align: justify;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 0.25em;
 }
 
 /* line 346, scss/style.scss */
@@ -484,6 +488,7 @@ div#top-description p {
   overflow: hidden;
   *zoom: 1;
 }
+
 /* line 431, scss/style.scss */
 .endpoint > .title .name {
   font-size: 18px;
@@ -494,6 +499,7 @@ div#top-description p {
   cursor: pointer;
   text-decoration: underline;
 }
+
 /* line 441, scss/style.scss */
 .endpoint > .title .actions {
   float: right;
@@ -666,7 +672,11 @@ div#top-description p {
 /* line 602, scss/style.scss */
 .method td.description {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
+}
+
+.method td.description p {
+  font-size: inherit;
 }
 /* line 607, scss/style.scss */
 .method td.type {
