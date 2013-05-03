@@ -354,19 +354,32 @@ function processRequest(req, res, next) {
     // Replace placeholders in the methodURL with matching params
     for (var param in params) {
         if (params.hasOwnProperty(param)) {
-            if (params[param] !== '') {
-                // URL params are prepended with ":"
-                var regx = new RegExp(':' + param);
+            // URL params are prepended with ":"
+            var regx = new RegExp(':' + param);
+            
+            // If the param is actually a part of the URL, put it in the URL and remove the param
+            if (!!regx.test(methodURL)) {
+                methodURL = methodURL.replace(regx, params[param]);
+                delete params[param]
+            }
 
-                // If the param is actually a part of the URL, put it in the URL and remove the param
-                if (!!regx.test(methodURL)) {
-                    methodURL = methodURL.replace(regx, params[param]);
-                    delete params[param]
-                }
-            } else {
-                delete params[param]; // Delete blank params
+            // if the param wasn't already deleted and is blank, delete it
+            if (params.hasOwnProperty(param) && params[param] == '') {
+                delete params[param];
             }
         }
+    }
+
+    // Delete empty optional blocks of the methodURL (wrapped in []) after parameter filling
+    var emptyBlock = new RegExp(/\[\/*?\]/);
+    while (!!emptyBlock.test(methodURL)) {
+        methodURL = methodURL.replace(emptyBlock, '');
+    }
+
+    // Delete brackets ('[' and ']') from filled-out optional blocks of the methodURL.
+    var brackets = new RegExp(/[\[\]]/);
+    while (!!brackets.test(methodURL)) {
+        methodURL = methodURL.replace(brackets, '');
     }
 
     var baseHostInfo = apiConfig.baseURL.split(':');
