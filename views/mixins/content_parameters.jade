@@ -38,8 +38,8 @@ mixin row(apiInfo, parameter, className)
         - if (parameter.Type == 'object' || parameter.Type == 'collection')
             li.name=parameter.Name
                 - if (parameter.Type == 'collection')
-                    a(href='#', class='add-collection button add', onclick='return false')
-                        img(src='/images/plus.png', style='margin-left: 10px;')
+                    a(href='#', class='add-collection button add ui-icon ui-icon-plusthick', onclick='return false', title='add item')
+            li.parameter-placeholder
             li.type=parameter.Type
             li.description
                 mixin description(parameter)
@@ -47,8 +47,7 @@ mixin row(apiInfo, parameter, className)
                 mixin parameters(apiInfo, parameter, className)
         - else if (parameter.Type == 'list' || parameter.Type == 'list-only')
             li.name=parameter.Name
-                a(href='#', class='add-list button add', onclick='return false')
-                    img(src='/images/plus.png', style='margin-left: 10px;')
+                a(href='#', class='add-list button add ui-icon ui-icon-plusthick', onclick='return false', title='add item')
             li.parameter
                 ul
                     li 

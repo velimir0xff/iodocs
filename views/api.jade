@@ -189,11 +189,11 @@ ul
                                         - if (method.content.parameters.length > 0)
                                             mixin content(apiInfo, method.content.parameters)
                                     div.contentType
+                                        p='Content-Type:'
                                         select(name='contentType')
                                             - each choice in method.content.contentType
                                                 option(value=choice) #{choice}
                                     div.fields
                                         textarea(columns='80', rows='10', id='requestContent', name='requestContent', placeholder='{}')
-                                        pre(class='requestContent prettyprint')
                             - if (!method['read-only'])
                                 input(type='submit', id=method.MethodName, value='Try it!')
