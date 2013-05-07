@@ -17,35 +17,35 @@ form#credentials
     input(type='hidden', name='apiName', value=apiName)
     - if (apiInfo.auth) 
         section(class='credentials ' + authed)
-         - if (authed && apiInfo.oauth)
-             span Authenticated with OAuth
-             img(src='/images/accept.png')
-         - else
-             h2 API Credentials
-               img(src='/images/key.png')
+            - if (authed && apiInfo.oauth)
+                span Authenticated with OAuth
+                img(src='/images/accept.png')
+            - else
+                h2 API Credentials
+                    img(src='/images/key.png')
 
-             - if (apiInfo.oauth)
-                 input(type='hidden', name='oauth', value='authrequired')
+                - if (apiInfo.oauth)
+                    input(type='hidden', name='oauth', value='authrequired')
 
-             - if (apiInfo.auth.defaultKey)
-                 - var defaultKey =apiInfo.auth.defaultKey
-             - else
-                 - var defaultKey =''
+                - if (apiInfo.auth.defaultKey)
+                    - var defaultKey =apiInfo.auth.defaultKey
+                - else
+                    - var defaultKey =''
 
-             - if (apiInfo.auth.defaultSecret)
-                 - var defaultSecret =apiInfo.auth.defaultSecret
-             - else
-                 - var defaultSecret =''
-             div
-                 label(for='key') API Key
-                 input(id='key', name='key', value=defaultKey, style='color=#EEEEEE')
-             div
-                 - if (apiInfo.oauth || apiInfo.signature)
-                     label(for='secret') Shared Secret
-                     input(id='secret', name='secret', value=defaultSecret, style='color=#EEEEEE')
-             - if (apiInfo.oauth && apiInfo.oauth.type !='two-legged')
-                 div
-                    input(name='oauth', value='Authenticate with OAuth', type='submit', id='oauth-auth')
+                - if (apiInfo.auth.defaultSecret)
+                    - var defaultSecret =apiInfo.auth.defaultSecret
+                - else
+                    - var defaultSecret =''
+                div
+                    label(for='key') API Key
+                    input(id='key', name='key', value=defaultKey, style='color=#EEEEEE')
+                div
+                    - if (apiInfo.oauth || apiInfo.signature)
+                        label(for='secret') Shared Secret
+                        input(id='secret', name='secret', value=defaultSecret, style='color=#EEEEEE')
+                - if (apiInfo.oauth && apiInfo.oauth.type !='two-legged')
+                    div
+                        input(name='oauth', value='Authenticate with OAuth', type='submit', id='oauth-auth')
 
 br
 div
@@ -114,46 +114,46 @@ ul
                                         - each parameter in method.parameters
                                             - paramCount++
                                             div(id='param' + paramCount)
-                                              - if (parameter.Required =='Y')
-                                                  - var required =true
-                                                  - var className ='required'
-                                              - else
-                                                  - var required =false
-                                                  - var className ='optional'
-                                              tr(class=className)
-                                                  td.name=parameter.Name
-                                                  td.parameter
-                                                      - if (parameter.Type =='enumerated')
-                                                          select(name='params[' + parameter.Name + ']', placeholder=className)
-                                                            - if (parameter.Default =='')
-                                                                option(value='') 
-                                                            - each choice in parameter.EnumeratedList
-                                                                - if (parameter.Default ==choice)
-                                                                        option(value=choice, selected=true) #{choice}
-                                                                - else
-                                                                        option(value=choice) #{choice}
-                                                      - else if (parameter.Type =='boolean')
-                                                           select(name='params[' + parameter.Name + ']', placeholder=className)
+                                                - if (parameter.Required =='Y')
+                                                    - var required =true
+                                                    - var className ='required'
+                                                - else
+                                                    - var required =false
+                                                    - var className ='optional'
+                                                tr(class=className)
+                                                    td.name=parameter.Name
+                                                    td.parameter
+                                                        - if (parameter.Type =='enumerated')
+                                                            select(name='params[' + parameter.Name + ']', placeholder=className)
                                                                 - if (parameter.Default =='')
-                                                                        option(value='') 
+                                                                    option(value='') 
+                                                                - each choice in parameter.EnumeratedList
+                                                                    - if (parameter.Default ==choice)
+                                                                        option(value=choice, selected=true) #{choice}
+                                                                    - else
+                                                                        option(value=choice) #{choice}
+                                                        - else if (parameter.Type =='boolean')
+                                                            select(name='params[' + parameter.Name + ']', placeholder=className)
+                                                                - if (parameter.Default =='')
+                                                                    option(value='') 
                                                                 - each choice in [apiInfo.booleanTrueVal,apiInfo.booleanFalseVal]
-                                                                   - if (parameter.Default ==choice)
-                                                                           option(value=choice, selected=true) #{choice}
-                                                                   - else
-                                                                           option(value=choice) #{choice}
-                                                      - else
-                                                          input(name='params[' + parameter.Name + ']', value=parameter.Default, placeholder=className)
-                                                          input(type='hidden', name='locations['+parameter.Name+']', value=parameter.Location || 'query')
-                                                  td.type=parameter.Type
-                                                  td.location
-                                                      p=parameter.Location || 'query'
-                                                  td.description
-                                                      p=parameter.Description || 'No description'
-                                                      - if (parameter.Type =='enumerated' && parameter.EnumeratedDescription)
-                                                          dl.clearfix
-                                                              - each description, choice in parameter.EnumeratedDescription
-                                                                  dt #{choice}
-                                                                  dd #{description}
+                                                                    - if (parameter.Default ==choice)
+                                                                        option(value=choice, selected=true) #{choice}
+                                                                    - else
+                                                                        option(value=choice) #{choice}
+                                                        - else
+                                                            input(name='params[' + parameter.Name + ']', value=parameter.Default, placeholder=className)
+                                                            input(type='hidden', name='locations['+parameter.Name+']', value=parameter.Location || 'query')
+                                                    td.type=parameter.Type
+                                                    td.location
+                                                        p=parameter.Location || 'query'
+                                                    td.description
+                                                        p=parameter.Description || 'No description'
+                                                        - if (parameter.Type =='enumerated' && parameter.EnumeratedDescription)
+                                                            dl.clearfix
+                                                                - each description, choice in parameter.EnumeratedDescription
+                                                                    dt #{choice}
+                                                                    dd #{description}
                             - if (method.headers && method.headers.length > 0)
                                 div.headers
                                     h4.title
