@@ -411,7 +411,7 @@ div.description p {
 }
 /* line 367, scss/style.scss */
 .credentials h2 {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 /* line 371, scss/style.scss */
 .credentials div {
@@ -427,6 +427,8 @@ div.description p {
   font-weight: bold;
   display: block;
   margin-bottom: 3px;
+  margin-right: 10px;
+  float: left;
 }
 /* line 386, scss/style.scss */
 .credentials input {
