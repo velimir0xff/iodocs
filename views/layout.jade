@@ -13,10 +13,13 @@ html
     body
         !{body}
         div(id='io-footer')
-           div(class='f-left') &copy;  
-              a(href='http://mashery.com/io') Mashery, Inc.
-           div(class='f-right') Powered by 
-              a(href='https://github.com/mashery/iodocs') I/O Docs
+            div(class='f-left') &copy; 
+                -if (apiInfo.copyrightName && apiInfo.copyrightHref)
+                    a(href=#{apiInfo.copyrightHref}) #{apiInfo.copyrightName}
+            div(class='f-right') Powered by 
+                a(href='https://github.com/mashery/iodocs') I/O Docs
+                , &copy; 
+                a(href='http://mashery.com/io') Mashery, Inc.
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
         script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js')
         script(src='/javascripts/json2.js')
