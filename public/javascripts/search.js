@@ -157,6 +157,8 @@
             methodsList.parent().toggleClass('expanded', false)
         }
         $('li.endpoint.hide-this').removeClass('hide-this');
+
+        $('#search1').val("");
     }
 
 })();
