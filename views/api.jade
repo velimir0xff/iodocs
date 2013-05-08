@@ -4,9 +4,8 @@ h1= apiInfo.name
 
 - if (apiInfo.description)
     div.description
-        - var descriptions = apiInfo.description.split("\n")
-        - each descr in descriptions
-            p=descr
+        - each descr in apiInfo.description
+            p!= descr
 
 - if (session.authed && apiInfo.oauth && apiInfo.oauth.type =='three-legged')
     - var authed ='authed'
@@ -47,12 +46,12 @@ form#credentials
                     div
                         input(name='oauth', value='Authenticate with OAuth', type='submit', id='oauth-auth')
 
-br
-div
-    form#searchForm
-        label(for='search1') Search&nbsp;
-        input(id='search1')
-    a#clear-search(href='#') Clear search
+form#searchForm
+    section(class='api-search')
+        div
+            label(for='search1') Search Documentation
+            input(id='search1')
+        a#clear-search(href='#') Clear search
 
 div(id='controls')
     ul
@@ -74,9 +73,8 @@ ul
                         a(href='#') Expand Methods
             - if (endpoint.description)
                 div.description
-                    - var descriptions = endpoint.description.split("\n")
-                    - each descr in descriptions
-                        p=descr
+                    - each descr in endpoint.description
+                        p!= descr
             - if (endpoint.methods.length)
             ul.methods
                 - each method in endpoint.methods

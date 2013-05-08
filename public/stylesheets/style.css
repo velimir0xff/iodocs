@@ -18,6 +18,14 @@ th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgr
   vertical-align: baseline;
 }
 
+b, em, strong {
+  font-weight: bold;
+}
+
+i {
+  font-style: italic;
+}
+
 /* line 47, scss/style.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
@@ -371,15 +379,15 @@ li {
 
 div.description {
   padding: 0;
-  margin: 6px 0px 8px 15px;
+  margin: 15px 5px;
 }
 div.description p {
-  font-size: 1.1em;
-  line-height: 1.25em;
-  text-align: justify;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: left;
   font-weight: normal;
   margin: 0;
-  margin-bottom: 0.25em;
+  margin-bottom: 10px;
 }
 
 /* line 346, scss/style.scss */
@@ -425,18 +433,58 @@ div.description p {
 /* line 380, scss/style.scss */
 .credentials label {
   font-weight: bold;
-  display: block;
+  display: inline-block;
   margin-bottom: 3px;
   margin-right: 10px;
-  float: left;
+  text-align: right;
+  width: 160px;
 }
 /* line 386, scss/style.scss */
 .credentials input {
-  width: 200px;
+  display: inline-block;
+  width: 400px;
 }
 /* line 390, scss/style.scss */
 .credentials #oauth-auth {
   margin-top: 20px;
+}
+
+.api-search {
+  background-color: #e7f6ec;
+  border: 1px solid #afe1c0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  *zoom: 1;
+  padding: 15px;
+  margin: 10px 0px;
+}
+
+.api-search div {
+  float: left;
+  margin-right: 15px;
+}
+
+.api-search label {
+  font-weight: bold;
+  display: inline-block;
+  text-align: right;
+  margin-bottom: 3px;
+  padding-right: 10px;
+  width: 160px;
+}
+.api-search input {
+  width: 400px;
+  display: inline-block;
+  float: right;
+}
+
+.api-search #clear-search {
+  margin-left: 10px;
+  display: inline-block;
 }
 
 /* line 395, scss/style.scss */
