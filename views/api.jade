@@ -1,6 +1,10 @@
 include mixins/content_parameters
 
-h1= apiInfo.name
+div#api-header
+    -if (apiInfo.logo)
+        div.logo
+            img(src='/images/' + apiInfo.logo)
+    h1= apiInfo.name
 
 - if (apiInfo.description)
     div.description

@@ -6,6 +6,9 @@ html
         -else
             - var title = 'Live Documentation'
         title=title
+
+        -if (apiInfo.favicon)
+            link(rel='icon', href='/images/' + apiInfo.favicon, type='image/x-icon')
         link(rel='stylesheet', href='/stylesheets/prettify.css')
         link(rel='stylesheet', href='/stylesheets/style.css')
         link(rel='stylesheet', href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery.ui.all.css')

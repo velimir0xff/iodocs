@@ -377,9 +377,27 @@ li {
   margin-left: 0;
 }
 
+div#api-header div.logo {
+  float: left;
+  width: 80px;
+  height: 100px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+
+div#api-header div.logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+div#api-header h1 {
+  display: inline-block;
+  padding-left: 5px;
+}
+
 div.description {
   padding: 0;
-  margin: 15px 5px;
+  margin: 5px 30px;
 }
 div.description p {
   font-size: 14px;
@@ -496,14 +514,15 @@ div.description p {
   border-width: 1px 0;
   padding: 10px 0;
 }
+
 /* line 402, scss/style.scss */
 #controls li {
+  padding-left: 10px;
   padding-right: 10px;
-  float: left;
+  display: inline-block;
 }
 /* line 406, scss/style.scss */
 #controls li:not(:first-child) {
-  padding-left: 10px;
   border-left: 1px solid #dddddd;
 }
 
