@@ -16,8 +16,8 @@ html
     body
         !{body}
         div(id='io-footer')
-            div(class='f-left') &copy; 
-                -if (apiInfo.copyrightName && apiInfo.copyrightHref)
+            -if (apiInfo.copyrightName && apiInfo.copyrightHref)
+                div(class='f-left') &copy; 
                     a(href=#{apiInfo.copyrightHref}) #{apiInfo.copyrightName}
             div(class='f-right') Powered by 
                 a(href='https://github.com/mashery/iodocs') I/O Docs
