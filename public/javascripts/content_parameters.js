@@ -165,7 +165,7 @@
                 .val();
 
             if (val != '') {
-                return formatValue(val);
+                return formatValue(val, type);
             }
         }
 
@@ -247,7 +247,7 @@
         return tempObj;
     }
 
-    function formatValue( value ) {
+    function formatValue( value, type ) {
         if ( value == 'value' || value == 'true' ) { 
             return true;
         }
@@ -256,7 +256,7 @@
         }
         // Should probably add a seperate check to see if its a number type to
         // begin with
-        else if ( /^\d+$/.test(value) ) {
+        else if ( /^\d+$/.test(value) && type !== 'string' ) {
             return parseInt(value);
         }
         else {
