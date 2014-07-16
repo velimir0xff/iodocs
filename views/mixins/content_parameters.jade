@@ -72,6 +72,8 @@ mixin parameters(apiInfo, parameter, className)
         - if (parameter.parameters != undefined)
             - if (parameter.parameters.length > 0)
                 mixin content(apiInfo, parameter.parameters, className, true, parameter.Type)
+    - else if (parameter.Type == 'text')
+        textarea(value=parameter.Default, placeholder=className, columns='80', rows='30', class='text-param')
     - else
         input(value=parameter.Default, placeholder=className)
 

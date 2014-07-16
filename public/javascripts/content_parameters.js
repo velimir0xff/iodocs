@@ -8,7 +8,7 @@
  
     // On click or data entry/change in content parameters, this block will capture
     // the event and things will happen, dominos will fall, and pigs will fly.
-    $('.content').find('ul.parameters').on( "change click keyup", "input, select", function(event) {
+    $('.content').find('ul.parameters').on( "paste change click keyup", "input, select, .text-param", function(event) {
         event.stopPropagation();
         updateContentTextArea($(this));
     });
@@ -176,6 +176,12 @@
         else if (type == 'list' || type == 'list-only') {
             var paramList  = row.children('li.parameter').children('ul');
             return handleTable(paramList, type);
+        }
+        else if (type == 'text') {
+            var val = row.find('.text-param').val()
+            if (val.length) {
+                return val;
+            }
         }
     }
 
