@@ -18,14 +18,6 @@ th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgr
   vertical-align: baseline;
 }
 
-b, em, strong {
-  font-weight: bold;
-}
-
-i {
-  font-style: italic;
-}
-
 /* line 47, scss/style.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
@@ -122,7 +114,7 @@ select {
 
 /* line 128, scss/style.scss */
 body {
-  font: 13px/1.231 sans-serif;
+  font: 13px / 1.231 sans-serif;
   *font-size: small;
 }
 
@@ -194,18 +186,25 @@ small {
   font-size: 85%;
 }
 
-/* line 191, scss/style.scss */
+/* line 193, scss/style.scss */
 strong,
-th {
+th,
+b,
+em {
   font-weight: bold;
 }
 
-/* line 195, scss/style.scss */
+/* line 197, scss/style.scss */
+i {
+  font-style: italic;
+}
+
+/* line 201, scss/style.scss */
 td {
   vertical-align: top;
 }
 
-/* line 200, scss/style.scss */
+/* line 206, scss/style.scss */
 sub,
 sup {
   font-size: 75%;
@@ -213,17 +212,17 @@ sup {
   position: relative;
 }
 
-/* line 206, scss/style.scss */
+/* line 212, scss/style.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 210, scss/style.scss */
+/* line 216, scss/style.scss */
 sub {
   bottom: -0.25em;
 }
 
-/* line 214, scss/style.scss */
+/* line 220, scss/style.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -231,33 +230,33 @@ pre {
   padding: 15px;
 }
 
-/* line 222, scss/style.scss */
+/* line 228, scss/style.scss */
 .ie6 legend,
 .ie7 legend {
   margin-left: -7px;
 }
 
-/* line 226, scss/style.scss */
+/* line 232, scss/style.scss */
 input[type="radio"] {
   vertical-align: text-bottom;
 }
 
-/* line 230, scss/style.scss */
+/* line 236, scss/style.scss */
 input[type="checkbox"] {
   vertical-align: bottom;
 }
 
-/* line 234, scss/style.scss */
+/* line 240, scss/style.scss */
 .ie7 input[type="checkbox"] {
   vertical-align: baseline;
 }
 
-/* line 238, scss/style.scss */
+/* line 244, scss/style.scss */
 .ie6 input {
   vertical-align: text-bottom;
 }
 
-/* line 246, scss/style.scss */
+/* line 252, scss/style.scss */
 label,
 input[type="button"],
 input[type="submit"],
@@ -266,7 +265,7 @@ button {
   cursor: pointer;
 }
 
-/* line 253, scss/style.scss */
+/* line 259, scss/style.scss */
 button,
 input,
 select,
@@ -276,20 +275,20 @@ textarea {
   margin: 0;
 }
 
-/* line 259, scss/style.scss */
-textarea {
+/* line 265, scss/style.scss */
+.fields textarea {
   overflow: auto;
   width: 60%;
 }
 
-/* line 265, scss/style.scss */
+/* line 271, scss/style.scss */
 input::-moz-focus-inner,
 button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 271, scss/style.scss */
+/* line 277, scss/style.scss */
 input:invalid,
 textarea:invalid {
   -webkit-border-radius: 1px;
@@ -302,103 +301,88 @@ textarea:invalid {
   box-shadow: 0, 0, 5px, red;
 }
 
-/* line 277, scss/style.scss */
+/* line 283, scss/style.scss */
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid {
   background-color: #f0dddd;
 }
 
-/* line 281, scss/style.scss */
+/* line 287, scss/style.scss */
 ::selection, ::-moz-selection {
   background: #f6f5c1;
   color: #444;
   text-shadow: none;
 }
 
-/* line 295, scss/style.scss */
+/* line 301, scss/style.scss */
 .ie7 img {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 303, scss/style.scss */
+/* line 309, scss/style.scss */
 body,
 select,
 input,
 textarea {
   color: #444;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* line 308, scss/style.scss */
+/* line 314, scss/style.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-/* line 312, scss/style.scss */
+/* line 318, scss/style.scss */
 html {
   height: 100%;
 }
 
-/* line 316, scss/style.scss */
+/* line 322, scss/style.scss */
 body {
   width: 960px;
   margin: 15px auto;
   padding-bottom: 20px;
 }
 
-/* line 322, scss/style.scss */
+/* line 328, scss/style.scss */
 h1 {
   font-size: 24px;
   line-height: 1.5;
   margin-bottom: 15px;
 }
 
-/* line 328, scss/style.scss */
+/* line 334, scss/style.scss */
 h2 {
   font-weight: normal;
   font-size: 18px;
   margin-bottom: 15px;
 }
 
-/* line 333, scss/style.scss */
+/* line 339, scss/style.scss */
 h4 {
   font-weight: normal;
   font-size: 14px;
 }
 
-/* line 337, scss/style.scss */
+/* line 343, scss/style.scss */
 ul {
   margin: 0;
 }
 
-/* line 341, scss/style.scss */
+/* line 347, scss/style.scss */
 li {
   list-style: none;
   margin-left: 0;
 }
 
-div#api-header div.logo {
-  float: left;
-  width: 80px;
-  height: 100px;
-  padding-right: 15px;
-  padding-bottom: 10px;
-}
-
-div#api-header div.logo img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-div#api-header h1 {
-  display: inline-block;
-  padding-left: 5px;
-}
-
+/* line 352, scss/style.scss */
 div.description {
   padding: 0;
   margin: 5px 30px;
 }
+
+/* line 356, scss/style.scss */
 div.description p {
   font-size: 14px;
   line-height: 17px;
@@ -408,7 +392,7 @@ div.description p {
   margin-bottom: 10px;
 }
 
-/* line 346, scss/style.scss */
+/* line 365, scss/style.scss */
 .credentials {
   background-color: #f4f4e1;
   border: 1px solid #cbcb71;
@@ -421,34 +405,34 @@ div.description p {
   *zoom: 1;
   padding: 15px;
 }
-/* line 353, scss/style.scss */
+/* line 372, scss/style.scss */
 .credentials.authed {
   background-color: #d6f6bd;
   border-color: #86bf6a;
   padding: 10px;
 }
-/* line 359, scss/style.scss */
+/* line 378, scss/style.scss */
 .credentials.authed form {
   display: none;
 }
-/* line 363, scss/style.scss */
+/* line 382, scss/style.scss */
 .credentials img {
   margin-left: 10px;
 }
-/* line 367, scss/style.scss */
+/* line 386, scss/style.scss */
 .credentials h2 {
   margin-bottom: 10px;
 }
-/* line 371, scss/style.scss */
+/* line 390, scss/style.scss */
 .credentials div {
   float: left;
   margin-right: 15px;
 }
-/* line 376, scss/style.scss */
+/* line 395, scss/style.scss */
 .credentials form {
   margin-top: 10px;
 }
-/* line 380, scss/style.scss */
+/* line 399, scss/style.scss */
 .credentials label {
   font-weight: bold;
   display: inline-block;
@@ -457,55 +441,17 @@ div.description p {
   text-align: right;
   width: 160px;
 }
-/* line 386, scss/style.scss */
+/* line 408, scss/style.scss */
 .credentials input {
   display: inline-block;
   width: 400px;
 }
-/* line 390, scss/style.scss */
+/* line 413, scss/style.scss */
 .credentials #oauth-auth {
   margin-top: 20px;
 }
 
-.api-search {
-  background-color: #e7f6ec;
-  border: 1px solid #afe1c0;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  overflow: hidden;
-  *zoom: 1;
-  padding: 15px;
-  margin: 10px 0px;
-}
-
-.api-search div {
-  float: left;
-  margin-right: 15px;
-}
-
-.api-search label {
-  font-weight: bold;
-  display: inline-block;
-  text-align: right;
-  margin-bottom: 3px;
-  padding-right: 10px;
-  width: 160px;
-}
-.api-search input {
-  width: 400px;
-  display: inline-block;
-  float: right;
-}
-
-.api-search #clear-search {
-  margin-left: 10px;
-  display: inline-block;
-}
-
-/* line 395, scss/style.scss */
+/* line 418, scss/style.scss */
 #controls {
   overflow: hidden;
   *zoom: 1;
@@ -514,19 +460,18 @@ div.description p {
   border-width: 1px 0;
   padding: 10px 0;
 }
-
-/* line 402, scss/style.scss */
+/* line 425, scss/style.scss */
 #controls li {
   padding-left: 10px;
   padding-right: 10px;
   display: inline-block;
 }
-/* line 406, scss/style.scss */
+/* line 430, scss/style.scss */
 #controls li:not(:first-child) {
   border-left: 1px solid #dddddd;
 }
 
-/* line 413, scss/style.scss */
+/* line 436, scss/style.scss */
 .endpoint {
   margin: 0;
   background-color: #f9f9f9;
@@ -546,50 +491,48 @@ div.description p {
   -o-transition-timing-function: ease;
   transition-timing-function: ease;
 }
-/* line 422, scss/style.scss */
+/* line 445, scss/style.scss */
 .endpoint.expanded {
   background-color: #fff;
 }
-/* line 426, scss/style.scss */
+/* line 449, scss/style.scss */
 .endpoint > .title {
   font-weight: normal;
   padding: 20px 0 10px 10px;
   overflow: hidden;
   *zoom: 1;
 }
-
-/* line 431, scss/style.scss */
+/* line 454, scss/style.scss */
 .endpoint > .title .name {
   font-size: 18px;
   float: left;
 }
-/* line 435, scss/style.scss */
+/* line 458, scss/style.scss */
 .endpoint > .title .name:hover {
   cursor: pointer;
   text-decoration: underline;
 }
-
-/* line 441, scss/style.scss */
+/* line 464, scss/style.scss */
 .endpoint > .title .actions {
   float: right;
 }
-/* line 444, scss/style.scss */
+/* line 467, scss/style.scss */
 .endpoint > .title .actions li {
   float: left;
   padding: 0 10px;
   border-left: 1px solid #dddddd;
 }
-/* line 450, scss/style.scss */
+/* line 473, scss/style.scss */
 .endpoint > .title .actions li:first-child {
   border: 0;
 }
 
-/* line 457, scss/style.scss */
+/* line 480, scss/style.scss */
 .methods {
   display: none;
 }
 
-/* line 461, scss/style.scss */
+/* line 484, scss/style.scss */
 .method {
   font-size: 14px;
   border: 1px solid #eeeeee;
@@ -605,23 +548,23 @@ div.description p {
           background-position: 7px 50%;
       }*/
 }
-/* line 467, scss/style.scss */
+/* line 490, scss/style.scss */
 .method div.headers {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.4);
   margin-bottom: 15px;
 }
-/* line 472, scss/style.scss */
+/* line 495, scss/style.scss */
 .method div.headers h4 {
   margin-top: 0;
 }
-/* line 476, scss/style.scss */
+/* line 499, scss/style.scss */
 .method div.headers .fields {
   display: none;
   padding: 0 15px;
   margin-bottom: 15px;
 }
-/* line 482, scss/style.scss */
+/* line 505, scss/style.scss */
 .method div.headers .indicator {
   border-width: 5px;
   border-color: transparent transparent transparent #333333;
@@ -630,16 +573,16 @@ div.description p {
   float: left;
   margin: 11px 0 0 10px;
 }
-/* line 491, scss/style.scss */
+/* line 514, scss/style.scss */
 .method div.headers.expanded .indicator {
   border-color: #333333 transparent transparent transparent;
   margin-top: 14px;
 }
-/* line 497, scss/style.scss */
+/* line 520, scss/style.scss */
 .method:first-of-type {
   margin-top: 0;
 }
-/* line 501, scss/style.scss */
+/* line 524, scss/style.scss */
 .method .title {
   overflow: hidden;
   -webkit-border-radius: 5px;
@@ -648,47 +591,47 @@ div.description p {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 505, scss/style.scss */
+/* line 528, scss/style.scss */
 .method .title:hover {
   background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
-/* line 509, scss/style.scss */
+/* line 532, scss/style.scss */
 .method .title:hover span {
   text-decoration: underline;
 }
-/* line 512, scss/style.scss */
+/* line 535, scss/style.scss */
 .method .title:hover span.http-method {
   text-decoration: none;
 }
-/* line 519, scss/style.scss */
+/* line 542, scss/style.scss */
 .method .title span {
   margin: 0 10px 0;
   line-height: 33px;
   float: left;
 }
-/* line 525, scss/style.scss */
+/* line 548, scss/style.scss */
 .method .title .uri {
   color: #777;
 }
-/* line 529, scss/style.scss */
+/* line 552, scss/style.scss */
 .method .title .name {
   font-size: 16px;
 }
-/* line 533, scss/style.scss */
+/* line 556, scss/style.scss */
 .method .title .description {
   float: right;
   font-size: 12px;
   text-align: right;
 }
-/* line 539, scss/style.scss */
+/* line 562, scss/style.scss */
 .method .title .http-method {
   padding: 0 10px;
   width: 40px;
   font-size: 12px;
   text-align: center;
   margin: 0;
-  font-family: "Inconsolata", "Monaco", "Consolas", "Bitstream Vera Mono", monospace;
+  font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Bitstream Vera Mono', monospace;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -698,86 +641,86 @@ div.description p {
   line-height: 33px;
   float: left;
 }
-/* line 561, scss/style.scss */
+/* line 584, scss/style.scss */
 .method form {
   clear: both;
   padding: 15px;
   display: none;
 }
-/* line 566, scss/style.scss */
+/* line 589, scss/style.scss */
 .method form a.clear-results {
   color: red;
   margin-left: 20px;
   font-size: 12px;
 }
-/* line 571, scss/style.scss */
+/* line 594, scss/style.scss */
 .method form a.clear-results:hover {
   background-color: red;
   color: #fff;
 }
-/* line 578, scss/style.scss */
+/* line 601, scss/style.scss */
 .method table {
   margin-bottom: 15px;
   width: 100%;
 }
-/* line 583, scss/style.scss */
+/* line 606, scss/style.scss */
 .method tr.required {
   font-weight: bold;
 }
-/* line 587, scss/style.scss */
+/* line 610, scss/style.scss */
 .method th {
   font-weight: bold;
   text-align: left;
 }
-/* line 592, scss/style.scss */
+/* line 615, scss/style.scss */
 .method th, .method td {
   padding: 5px;
   vertical-align: middle;
 }
-/* line 597, scss/style.scss */
+/* line 620, scss/style.scss */
 .method td, .method pre {
-  font-family: "Inconsolata", "Monaco", "Consolas", "Bitstream Vera Mono", monospace;
+  font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Bitstream Vera Mono', monospace;
 }
-/* line 602, scss/style.scss */
+/* line 625, scss/style.scss */
 .method td.description {
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 13px;
 }
-
+/* line 630, scss/style.scss */
 .method td.description p {
   font-size: inherit;
 }
-/* line 607, scss/style.scss */
+/* line 634, scss/style.scss */
 .method td.type {
   font-size: 12px;
 }
-/* line 612, scss/style.scss */
+/* line 639, scss/style.scss */
 .method h4 {
   margin-top: 15px;
   margin-bottom: 3px;
 }
-/* line 616, scss/style.scss */
+/* line 643, scss/style.scss */
 .method h4 a.select-all {
   font-size: 12px;
   margin-left: 15px;
 }
-/* line 622, scss/style.scss */
+/* line 649, scss/style.scss */
 .method pre {
   font-size: 12px;
   overflow: auto;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 0.4);
 }
-/* line 628, scss/style.scss */
+/* line 655, scss/style.scss */
 .method pre.response {
   max-height: 500px;
 }
-/* line 632, scss/style.scss */
+/* line 659, scss/style.scss */
 .method pre.prettyprint {
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
-/* line 637, scss/style.scss */
+/* line 664, scss/style.scss */
 .method pre.error {
   background-color: rgba(255, 66, 66, 0.2);
   border-color: rgba(255, 100, 100, 0.5);
@@ -839,7 +782,7 @@ div.description p {
   border-bottom: 1px solid #d6a1a1;
 }
 
-/* line 650, scss/style.scss */
+/* line 677, scss/style.scss */
 .ir {
   display: block;
   text-indent: -999em;
@@ -849,7 +792,7 @@ div.description p {
   direction: ltr;
 }
 
-/* line 659, scss/style.scss */
+/* line 686, scss/style.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -861,7 +804,7 @@ div.description p {
   width: 1px;
 }
 
-/* line 671, scss/style.scss */
+/* line 698, scss/style.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -872,12 +815,12 @@ div.description p {
   width: auto;
 }
 
-/* line 680, scss/style.scss */
+/* line 707, scss/style.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 685, scss/style.scss */
+/* line 712, scss/style.scss */
 .clearfix:before,
 .clearfix:after {
   content: "\0020";
@@ -886,24 +829,24 @@ div.description p {
   overflow: hidden;
 }
 
-/* line 692, scss/style.scss */
+/* line 719, scss/style.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 696, scss/style.scss */
+/* line 723, scss/style.scss */
 .clearfix {
   zoom: 1;
 }
 
-/* line 700, scss/style.scss */
+/* line 727, scss/style.scss */
 dl {
   display: inline-block;
   margin-bottom: 10px;
   font-weight: normal;
 }
 
-/* line 705, scss/style.scss */
+/* line 732, scss/style.scss */
 dt {
   width: 30%;
   border-top: 1px rgba(0, 0, 0, 0.2) solid;
@@ -913,7 +856,7 @@ dt {
   float: left;
 }
 
-/* line 713, scss/style.scss */
+/* line 740, scss/style.scss */
 dd {
   width: 70%;
   border-top: 1px rgba(0, 0, 0, 0.2) solid;
@@ -927,29 +870,29 @@ dd {
 /* New additions. */
 /**/
 /* Type-ahead search css */
-/* line 727, scss/style.scss */
+/* line 754, scss/style.scss */
 .ui-autocomplete-category {
   font-weight: bold;
-  padding: 0.2em 0.4em;
-  margin: 0.8em 0 0.2em;
+  padding: .2em .4em;
+  margin: .8em 0 .2em;
   line-height: 1.5;
 }
 
 /* Used to hide endpoints and methods that do not match for a given search */
-/* line 735, scss/style.scss */
+/* line 762, scss/style.scss */
 .hide-this {
   display: none;
 }
 
 /* Bookmark css - Making the entire method bar clickable.*/
 /* http://blog.avtex.com/2012/01/27/how-to-make-an-entire-div-clickable-with-css/ */
-/* line 741, scss/style.scss */
+/* line 768, scss/style.scss */
 div.clickable {
   /* Containing div must have a position value */
   position: relative;
 }
 
-/* line 745, scss/style.scss */
+/* line 772, scss/style.scss */
 div.clickable a {
   position: absolute;
   width: 100%;
@@ -973,7 +916,7 @@ div.clickable a {
 
 /* Rotating minimize triangle */
 /* http://webdesigncrowd.com/animated-buttons-css3-transitions-transforms/ */
-/* line 764, scss/style.scss */
+/* line 791, scss/style.scss */
 .button-container {
   position: relative;
   /*Important, Keeps the CSS3 Shapes in place*/
@@ -983,7 +926,7 @@ div.clickable a {
   padding: 3px 0;
 }
 
-/* line 771, scss/style.scss */
+/* line 798, scss/style.scss */
 .arrow-container {
   position: relative;
   top: 0px;
@@ -996,7 +939,7 @@ div.clickable a {
   transition: transform 0.3s ease-out;
 }
 
-/* line 783, scss/style.scss */
+/* line 810, scss/style.scss */
 .arrow-down {
   width: 0;
   height: 0;
@@ -1007,52 +950,103 @@ div.clickable a {
   line-height: 0px;
 }
 
-/* line 793, scss/style.scss */
+/* line 820, scss/style.scss */
 .rotate {
   -webkit-transform: rotateZ(-90deg) translateX(5px);
   -moz-transform: rotateZ(-90deg) translateX(5px);
   transform: rotateZ(-90deg) translateX(5px);
 }
 
+/* api header */
+/* line 828, scss/style.scss */
+div#api-header div.logo {
+  float: left;
+  width: 80px;
+  height: 100px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+
+/* line 836, scss/style.scss */
+div#api-header div.logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* line 841, scss/style.scss */
+div#api-header h1 {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+/* api-search */
+/* line 848, scss/style.scss */
+.api-search {
+  background-color: #e7f6ec;
+  border: 1px solid #afe1c0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  *zoom: 1;
+  padding: 15px;
+  margin: 10px 0px;
+}
+
+/* line 862, scss/style.scss */
+.api-search div {
+  float: left;
+  margin-right: 15px;
+}
+
+/* line 867, scss/style.scss */
+.api-search label {
+  font-weight: bold;
+  display: inline-block;
+  text-align: right;
+  margin-bottom: 3px;
+  padding-right: 10px;
+  width: 160px;
+}
+
+/* line 875, scss/style.scss */
+.api-search input {
+  width: 400px;
+  display: inline-block;
+  float: right;
+}
+
+/* line 881, scss/style.scss */
+.api-search #clear-search {
+  margin-left: 10px;
+  display: inline-block;
+}
+
 /* Nested lists for nested PUT/POST content parameters */
-/* line 801, scss/style.scss */
-.post div.content ul.header, .post div.content ul.string, .post div.content ul.integer, .post div.content ul.enumerated, .post div.content ul.list, .post div.content ul.list-only, .post div.content ul.collection, .post div.content ul.object, .put div.content ul.header, .put div.content ul.string, .put div.content ul.integer, .put div.content ul.enumerated, .put div.content ul.list, .put div.content ul.list-only, .put div.content ul.collection, .put div.content ul.object {
+/* line 889, scss/style.scss */
+.post div.content ul.header, .post div.content ul.string, .post div.content ul.integer, .post div.content ul.enumerated, .post div.content ul.list, .post div.content ul.list-only, .post div.content ul.text, .post div.content ul.collection, .post div.content ul.object, .put div.content ul.header, .put div.content ul.string, .put div.content ul.integer, .put div.content ul.enumerated, .put div.content ul.list, .put div.content ul.list-only, .put div.content ul.text, .put div.content ul.collection, .put div.content ul.object {
   margin-top: 1%;
   margin-bottom: 1%;
 }
 
-/* line 808, scss/style.scss */
-.post div.content ul.header > li, .post div.content ul.string > li, .post div.content ul.boolean > li, .post div.content ul.integer > li, .post div.content ul.enumerated > li, .post div.content ul.list > li, .post div.content ul.list > li > a, .post div.content ul.list-only > li, .post div.content ul.collection > li.name, .post div.content ul.collection > li.name > a, .post div.content ul.collection > li.type, .post div.content ul.collection > li.description, .post div.content ul.object > li.name, .post div.content ul > li.parameter-placeholder, .post div.content ul.object > li.type, .post div.content ul.object > li.description, 
-.put div.content ul.header > li, .put div.content ul.string > li, .put div.content ul.boolean > li, .put div.content ul.integer > li, .put div.content ul.enumerated > li, .put div.content ul.list > li, .put div.content ul.list > li > a, .put div.content ul.list-only > li, .put div.content ul.collection > li.name, .put div.content ul.collection > li.name > a, .put div.content ul.collection > li.type, .put div.content ul.collection > li.description, .put div.content ul.object > li.name, .put div.content ul > li.parameter-placeholder, .put div.content ul.object > li.type, .put div.content ul.object > li.description {
+/* line 896, scss/style.scss */
+.post div.content ul.header > li, .post div.content ul.string > li, .post div.content ul.integer > li, .post div.content ul.enumerated > li, .post div.content ul.list > li, .post div.content ul.list-only > li, .post div.content ul.text > li, .post div.content ul.collection > li.name, .post div.content ul.collection > li.type, .post div.content ul.collection > li.description, .post div.content ul.object > li.name, .post div.content ul.object > li.type, .post div.content ul.object > li.description, .put div.content ul.header > li, .put div.content ul.string > li, .put div.content ul.integer > li, .put div.content ul.enumerated > li, .put div.content ul.list > li, .put div.content ul.list-only > li, .put div.content ul.text > li, .put div.content ul.collection > li.name, .put div.content ul.collection > li.type, .put div.content ul.collection > li.description, .put div.content ul.object > li.name, .put div.content ul.object > li.type, .put div.content ul.object > li.description {
   display: inline-block;
-}
-
-.post div.content ul > li.name > a, .put div.content ul > li.name > a {
-  margin: 0px 5px;
 }
 
 /* Only need this for PUT and POST methods, GET and DELETE won't have content
     blocks. Or at least don't currently.
  */
-/* line 813, scss/style.scss */
+/* line 901, scss/style.scss */
 .post div.content {
   /* Darkening the background for collection parameters by nesting level, only goes 3 deep */
   /* Initial alignment */
   overflow-x: scroll;
   margin-bottom: 5px;
 }
-
-.post div.content div.contentType, .put div.content div.contentType {
-  margin: 5px 0px 10px;
-}
-
-.post div.content div.contentType p, .post div.content div.contentType select,
-.put div.content div.contentType p, .put div.content div.contentType select {
-  margin-right: 5px;
-  display: inline-block;
-}
-
-/* line 814, scss/style.scss */
+/* line 902, scss/style.scss */
 .post div.content ul {
   display: block;
   margin-left: 2%;
@@ -1060,56 +1054,59 @@ div.clickable a {
   /* For list and list-only type parameters, add a bit of margin
       for spacing between the added boxes. */
 }
-/* line 822, scss/style.scss */
-.post div.content ul.header, .post div.content ul.boolean, .post div.content ul.string, .post div.content ul.integer, .post div.content ul.enumerated, .post div.content ul.list, .post div.content ul.list-only {
+/* line 910, scss/style.scss */
+.post div.content ul.header, .post div.content ul.string, .post div.content ul.integer, .post div.content ul.enumerated, .post div.content ul.list, .post div.content ul.list-only, .post div.content ul.text {
   border-bottom: 1px solid #9ddab1;
   padding-top: 4px;
   padding-bottom: 10px;
 }
-/* line 827, scss/style.scss */
-.post div.content ul.header > li.parameter, .post div.content ul.boolean > li.parameter, .post div.content ul.string > li.parameter, .post div.content ul.integer > li.parameter, .post div.content ul.enumerated > li.parameter, .post div.content ul.list > li.parameter, .post div.content ul.list-only > li.parameter, .post div.content ul > li.parameter-placeholder {
+/* line 915, scss/style.scss */
+.post div.content ul.header > li.parameter, .post div.content ul.string > li.parameter, .post div.content ul.integer > li.parameter, .post div.content ul.enumerated > li.parameter, .post div.content ul.list > li.parameter, .post div.content ul.list-only > li.parameter, .post div.content ul.text > li.parameter {
   margin-right: 1em;
 }
-/* line 837, scss/style.scss */
+/* line 925, scss/style.scss */
 .post div.content ul.header {
   font-weight: bold;
 }
-/* line 839, scss/style.scss */
-.post div.content ul.header > li.parameter, .post div.content ul li.parameter-placeholder {
+/* line 927, scss/style.scss */
+.post div.content ul.header > li.parameter {
   width: 10em;
 }
-/* line 844, scss/style.scss */
+/* line 932, scss/style.scss */
 .post div.content ul.collection, .post div.content ul.object {
   /* May want to just setup ul.subcontainer and style that instead. */
 }
-/* line 855, scss/style.scss */
+/* line 943, scss/style.scss */
 .post div.content ul.collection > li.parameter > ul, .post div.content ul.object > li.parameter > ul {
   margin-left: 0;
 }
-/* line 863, scss/style.scss */
+/* line 951, scss/style.scss */
 .post div.content ul.list-only > li.parameter > ul > li, .post div.content ul.list > li.parameter > ul > li {
   margin-bottom: 4%;
 }
-
-/* line 872, scss/style.scss */
+/* line 960, scss/style.scss */
 .post div.content ul li.name {
   width: 8em;
   word-wrap: break-word;
   vertical-align: top;
 }
-
-/* line 877, scss/style.scss */
+/* line 965, scss/style.scss */
 .post div.content ul li.type {
   width: 8em;
   vertical-align: top;
 }
-/* line 881, scss/style.scss */
+/* line 969, scss/style.scss */
 .post div.content ul li.description {
   width: 27em;
   word-wrap: break-word;
   vertical-align: top;
 }
-/* line 890, scss/style.scss */
+/* line 974, scss/style.scss */
+.post div.content ul li a {
+  margin: 0px 5px;
+  display: inline-block;
+}
+/* line 982, scss/style.scss */
 .post div.content ul.collection ul.parameters {
   background-color: #ccf8da;
   -webkit-border-radius: 5px;
@@ -1118,7 +1115,7 @@ div.clickable a {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 895, scss/style.scss */
+/* line 987, scss/style.scss */
 .post div.content ul.collection ul.parameters ul.collection ul.parameters {
   background-color: #baf0cc;
   -webkit-border-radius: 5px;
@@ -1127,7 +1124,7 @@ div.clickable a {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 900, scss/style.scss */
+/* line 992, scss/style.scss */
 .post div.content ul.collection ul.parameters ul.collection ul.parameters ul.collection ul.parameters {
   background-color: #aae7be;
   -webkit-border-radius: 5px;
@@ -1136,23 +1133,32 @@ div.clickable a {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 908, scss/style.scss */
+/* line 1000, scss/style.scss */
 .post div.content > ul {
   margin-left: 0;
 }
-/* line 910, scss/style.scss */
+/* line 1002, scss/style.scss */
 .post div.content > ul > li > ul {
   margin-left: 0;
 }
+/* line 1007, scss/style.scss */
+.post div.content div.contentType {
+  margin: 5px 0px 10px;
+}
+/* line 1008, scss/style.scss */
+.post div.content div.contentType p, .post div.content div.contentType select {
+  margin-right: 5px;
+  display: inline-block;
+}
 
-/* line 813, scss/style.scss */
+/* line 901, scss/style.scss */
 .put div.content {
   /* Darkening the background for collection parameters by nesting level, only goes 3 deep */
   /* Initial alignment */
   overflow-x: scroll;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
-/* line 814, scss/style.scss */
+/* line 902, scss/style.scss */
 .put div.content ul {
   display: block;
   margin-left: 2%;
@@ -1160,54 +1166,59 @@ div.clickable a {
   /* For list and list-only type parameters, add a bit of margin
       for spacing between the added boxes. */
 }
-/* line 822, scss/style.scss */
-.put div.content ul.header, .put div.content ul.boolean, .put div.content ul.string, .put div.content ul.integer, .put div.content ul.enumerated, .put div.content ul.list, .put div.content ul.list-only {
+/* line 910, scss/style.scss */
+.put div.content ul.header, .put div.content ul.string, .put div.content ul.integer, .put div.content ul.enumerated, .put div.content ul.list, .put div.content ul.list-only, .put div.content ul.text {
   border-bottom: 1px solid #e3c399;
   padding-top: 4px;
   padding-bottom: 10px;
 }
-/* line 827, scss/style.scss */
-.put div.content ul.header > li.parameter, .put div.content ul.boolean > li.parameter, .put div.content ul.string > li.parameter, .put div.content ul.integer > li.parameter, .put div.content ul.enumerated > li.parameter, .put div.content ul.list > li.parameter, .put div.content ul.list-only > li.parameter {
+/* line 915, scss/style.scss */
+.put div.content ul.header > li.parameter, .put div.content ul.string > li.parameter, .put div.content ul.integer > li.parameter, .put div.content ul.enumerated > li.parameter, .put div.content ul.list > li.parameter, .put div.content ul.list-only > li.parameter, .put div.content ul.text > li.parameter {
   margin-right: 1em;
 }
-/* line 837, scss/style.scss */
+/* line 925, scss/style.scss */
 .put div.content ul.header {
   font-weight: bold;
 }
-/* line 839, scss/style.scss */
+/* line 927, scss/style.scss */
 .put div.content ul.header > li.parameter {
-  width: 8em;
+  width: 10em;
 }
-/* line 844, scss/style.scss */
+/* line 932, scss/style.scss */
 .put div.content ul.collection, .put div.content ul.object {
   /* May want to just setup ul.subcontainer and style that instead. */
 }
-/* line 855, scss/style.scss */
+/* line 943, scss/style.scss */
 .put div.content ul.collection > li.parameter > ul, .put div.content ul.object > li.parameter > ul {
   margin-left: 0;
 }
-/* line 863, scss/style.scss */
+/* line 951, scss/style.scss */
 .put div.content ul.list-only > li.parameter > ul > li, .put div.content ul.list > li.parameter > ul > li {
   margin-bottom: 4%;
 }
-/* line 872, scss/style.scss */
+/* line 960, scss/style.scss */
 .put div.content ul li.name {
   width: 8em;
   word-wrap: break-word;
   vertical-align: top;
 }
-/* line 877, scss/style.scss */
+/* line 965, scss/style.scss */
 .put div.content ul li.type {
   width: 8em;
   vertical-align: top;
 }
-/* line 881, scss/style.scss */
+/* line 969, scss/style.scss */
 .put div.content ul li.description {
   width: 27em;
   word-wrap: break-word;
   vertical-align: top;
 }
-/* line 890, scss/style.scss */
+/* line 974, scss/style.scss */
+.put div.content ul li a {
+  margin: 0px 5px;
+  display: inline-block;
+}
+/* line 982, scss/style.scss */
 .put div.content ul.collection ul.parameters {
   background-color: #fce7cd;
   -webkit-border-radius: 5px;
@@ -1216,7 +1227,7 @@ div.clickable a {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 895, scss/style.scss */
+/* line 987, scss/style.scss */
 .put div.content ul.collection ul.parameters ul.collection ul.parameters {
   background-color: #f6dbb9;
   -webkit-border-radius: 5px;
@@ -1225,7 +1236,7 @@ div.clickable a {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 900, scss/style.scss */
+/* line 992, scss/style.scss */
 .put div.content ul.collection ul.parameters ul.collection ul.parameters ul.collection ul.parameters {
   background-color: #eecfa8;
   -webkit-border-radius: 5px;
@@ -1234,19 +1245,28 @@ div.clickable a {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 908, scss/style.scss */
+/* line 1000, scss/style.scss */
 .put div.content > ul {
   margin-left: 0;
 }
-/* line 910, scss/style.scss */
+/* line 1002, scss/style.scss */
 .put div.content > ul > li > ul {
   margin-left: 0;
+}
+/* line 1007, scss/style.scss */
+.put div.content div.contentType {
+  margin: 5px 0px 10px;
+}
+/* line 1008, scss/style.scss */
+.put div.content div.contentType p, .put div.content div.contentType select {
+  margin-right: 5px;
+  display: inline-block;
 }
 
 /* Existed previously, believe (perhaps incorrectly) @media declarations should
  exist between style declarations, so moved to the end. */
 @media print {
-  /* line 940, scss/style.scss */
+  /* line 1041, scss/style.scss */
   * {
     background: transparent !important;
     color: black !important;
@@ -1256,41 +1276,41 @@ div.clickable a {
   }
 
   /* Black prints faster: sanbeiji.com/archives/953 */
-  /* line 943, scss/style.scss */
+  /* line 1044, scss/style.scss */
   a, a:visited {
-    color: #444444 !important;
+    color: #444 !important;
     text-decoration: underline;
   }
 
-  /* line 945, scss/style.scss */
+  /* line 1046, scss/style.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 947, scss/style.scss */
+  /* line 1048, scss/style.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
-  /* line 949, scss/style.scss */
+  /* line 1050, scss/style.scss */
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
     content: "";
   }
 
   /* Don't show links for images, or javascript/internal links */
-  /* line 951, scss/style.scss */
+  /* line 1052, scss/style.scss */
   pre, blockquote {
     border: 1px solid #999999;
     page-break-inside: avoid;
   }
 
-  /* line 953, scss/style.scss */
+  /* line 1054, scss/style.scss */
   thead {
     display: table-header-group;
   }
 
   /* css-discuss.incutio.com/wiki/Printing_Tables */
-  /* line 955, scss/style.scss */
+  /* line 1056, scss/style.scss */
   tr, img {
     page-break-inside: avoid;
   }
@@ -1299,13 +1319,13 @@ div.clickable a {
     margin: 0.5cm;
 }
 
-  /* line 959, scss/style.scss */
+  /* line 1060, scss/style.scss */
   p, h2, h3 {
     orphans: 3;
     widows: 3;
   }
 
-  /* line 961, scss/style.scss */
+  /* line 1062, scss/style.scss */
   h2, h3 {
     page-break-after: avoid;
   }

@@ -115,7 +115,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0;
 }
@@ -188,8 +188,14 @@ small {
 }
 
 strong,
-th {
+th,
+b,
+em {
   font-weight: bold;
+}
+
+i {
+  font-style: italic;
 }
 
 td {
@@ -256,7 +262,7 @@ textarea {
   margin: 0;
 }
 
-textarea {
+.fields textarea {
   overflow: auto;
   width: 60%;
 }
@@ -345,15 +351,15 @@ li {
 
 div.description {
   padding: 0;
-  margin: 6px 0px 8px 15px;
+  margin: 5px 30px;
 }
 div.description p {
-  font-size: 1.1em;
-  line-height: 1.25em;
-  text-align: justify;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: left;
   font-weight: normal;
   margin: 0;
-  margin-bottom: 0.25em;
+  margin-bottom: 10px;
 }
 
 .credentials {
@@ -378,7 +384,7 @@ div.description p {
     }
 
     h2 {
-        margin-bottom: 0;
+        margin-bottom: 10px;
     }
 
     div {
@@ -392,12 +398,16 @@ div.description p {
 
     label {
         font-weight: bold;
-        display: block;
+        display: inline-block;
         margin-bottom: 3px;
+        margin-right: 10px;
+        text-align: right;
+        width: 160px;
     }
 
     input {
-        width: 200px;
+        display: inline-block;
+        width: 400px;
     }
 
     #oauth-auth {
@@ -408,17 +418,17 @@ div.description p {
 #controls {
     @include clearfix;
     margin-top: 10px;
-    border: 1px solid #999;
+    border: 1px solid #999999;
     border-width: 1px 0;
     padding: 10px 0;
 
     li {
+        padding-left: 10px;
         padding-right: 10px;
-        float: left;
+        display: inline-block;
 
         &:not(:first-child) {
-            padding-left: 10px;
-            border-left: 1px solid #ddd;
+            border-left: 1px solid #dddddd;
         }
     }
 }
@@ -426,7 +436,7 @@ div.description p {
 .endpoint {
     margin: 0;
     background-color: #f9f9f9;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eeeeee;
     @include clearfix;
     @include transition-property(background-color);
     @include transition-duration(0.5s);
@@ -457,7 +467,7 @@ div.description p {
             li {
                 float: left;
                 padding: 0 10px;
-                border-left: 1px solid #ddd;
+                border-left: 1px solid #dddddd;
             }
 
             li:first-child {
@@ -473,7 +483,7 @@ div.description p {
 
 .method {
     font-size: 14px;
-    border: 1px solid #eee;
+    border: 1px solid #eeeeee;
     @include border-radius(5px);
     margin: 10px 0;
 
@@ -494,7 +504,7 @@ div.description p {
                                                                                                                                                                                                                
         .indicator {
           border-width: 5px;
-          border-color: transparent transparent transparent #333;
+          border-color: transparent transparent transparent #333333;
           border-style: solid;
           display: block;
           float: left;
@@ -502,7 +512,7 @@ div.description p {
         }
                                                                                                                                                                                                                
         &.expanded .indicator {
-          border-color: #333 transparent transparent transparent;
+          border-color: #333333 transparent transparent transparent;
           margin-top: 14px;
         }
     }
@@ -813,6 +823,67 @@ div.clickable a {
     transform: rotateZ(-90deg) translateX(5px);
 }
 
+/* api header */
+
+div#api-header div.logo {
+  float: left;
+  width: 80px;
+  height: 100px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+
+div#api-header div.logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+div#api-header h1 {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+/* api-search */
+
+.api-search {
+  background-color: #e7f6ec;
+  border: 1px solid #afe1c0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  *zoom: 1;
+  padding: 15px;
+  margin: 10px 0px;
+}
+
+.api-search div {
+  float: left;
+  margin-right: 15px;
+}
+
+.api-search label {
+  font-weight: bold;
+  display: inline-block;
+  text-align: right;
+  margin-bottom: 3px;
+  padding-right: 10px;
+  width: 160px;
+}
+.api-search input {
+  width: 400px;
+  display: inline-block;
+  float: right;
+}
+
+.api-search #clear-search {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+
 /* Nested lists for nested PUT/POST content parameters */
 
 %border-spacing {
@@ -836,13 +907,13 @@ div.clickable a {
 
             // For 'ul' with the following classes, make their list elements in-line.
             // Rows!
-            &.header, &.string, &.integer, &.enumerated, &.list, &.list-only {
+            &.header, &.string, &.integer, &.enumerated, &.list, &.list-only, &.text {
                 @extend %border-spacing;
 
                 & > li {
                     @extend %inline-lists;
                     &.parameter {
-                        margin-right: 3em;
+                        margin-right: 1em;
                     }
                 }
                 
@@ -853,8 +924,8 @@ div.clickable a {
 
             &.header {
                 font-weight: bold;
-                > li.parameter{
-                    width: 8em;
+                > li.parameter, {
+                    width: 10em;
                 }
             }
 
@@ -900,6 +971,10 @@ div.clickable a {
                     word-wrap: break-word;
                     vertical-align: top;
                 }
+                a {
+                    margin: 0px 5px;
+                    display: inline-block;
+                }
             }
         }
 
@@ -929,9 +1004,18 @@ div.clickable a {
             }
         }
 
+        div.contentType {
+            p, select {
+                margin-right: 5px;
+                display: inline-block;
+            }
+            margin: 5px 0px 10px;
+        }
+
         // In the event that things are so deeply nested, this will make it possible
         // to see nested content parameters.
         overflow-x: scroll;
+        margin-bottom: 5px;
     }
 }
 
@@ -965,7 +1049,7 @@ div.clickable a {
 
     .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
     /* Don't show links for images, or javascript/internal links */
-    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+    pre, blockquote { border: 1px solid #999999; page-break-inside: avoid; }
 
     thead { display: table-header-group; }
     /* css-discuss.incutio.com/wiki/Printing_Tables */
